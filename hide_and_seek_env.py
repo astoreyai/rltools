@@ -1,6 +1,6 @@
 # hide_and_seek_env.py
 import gym
-from gym_minigrid.minigrid import MiniGridEnv
+from minigrid.core.env import MiniGridEnv  # Corrected import
 from strategy import BasicStrategy, IntermediateStrategy, AdvancedStrategy
 
 class Unit:
@@ -62,7 +62,6 @@ class HideSeek1v1Env(HideSeekEnv):
             "OFF.drone": Unit("drone", "OFF"),
             "DEF.drone": Unit("drone", "DEF")
         }
-        # Assign strategies (you can change to Intermediate or Advanced later)
         units["OFF.drone"].strategy = BasicStrategy()
         units["DEF.drone"].strategy = BasicStrategy()
         super().__init__(size=10, units=units)
